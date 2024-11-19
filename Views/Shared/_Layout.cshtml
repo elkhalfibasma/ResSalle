@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/site.css" />
+    <title>MeetNest | Réservation de Salles de Réunion</title>
+</head>
+<body>
+    @RenderBody()
+    
+    <nav>
+        <div class="nav__header">
+            <div class="nav__logo">
+                <a class="logo">Meet<span>Nest</span></a>
+            </div>
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-line"></i>
+            </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">À propos de nous</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#reservation">Réservation</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+   
+    <header class="header" id="home">
+        <div class="section__container header__container">
+            <h1>Réservez votre salle de réunion idéale<br /><span>pour des rencontres productives.</span></h1>
+            <p>Profitez d'espaces confortables et bien équipés.</p>
+            <form action="/">
+                <div class="input__group">
+                    <span><i class="ri-building-2-fill"></i></span>
+                    <input type="text" placeholder="Quelle salle recherchez-vous?" />
+                </div>
+                <div class="input__group">
+                    <span><i class="ri-map-pin-2-fill"></i></span>
+                    <input type="text" placeholder="Emplacement" />
+                </div>
+                <div class="input__group">
+                    <span><i class="ri-calendar-2-fill"></i></span>
+                    <input type="text" placeholder="Date et Heure" />
+                </div>
+                <div class="input__group">
+                    <button class="btn">Rechercher</button>
+                </div>
+            </form>
+        </div>
+    </header>
+    <section id="about" class="section__container about__container">
+        <h2 class="section__header">À propos de MeetNest</h2>
+
+        <div class="cards-container">
+
+     
+            <div class="card">
+                <div class="card-front">
+                    <i class="fas fa-users" style="font-size: 40px; color: #4CAF50;"></i>
+                    <h3 class="card-title">Qui nous sommes</h3>
+                </div>
+                <div class="card-back">
+                    <p class="card-description">
+                        MeetNest est une équipe passionnée par l’innovation dans le domaine de l’événementiel.
+                       
+                    </p>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <div class="card-front">
+                    <i class="fas fa-bullseye" style="font-size: 40px; color: #FF9800;"></i>
+                    <h3 class="card-title">Nos objectifs</h3>
+                </div>
+                <div class="card-back">
+                    <p class="card-description">
+                        Notre objectif est de simplifier l'organisation d'événements professionnels grâce à des solutions flexibles.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-front">
+                    <i class="fas fa-handshake" style="font-size: 40px; color: #2196F3;"></i>
+                    <h3 class="card-title">Nos valeurs</h3>
+                </div>
+                <div class="card-back">
+                    <p class="card-description">
+                        Nous valorisons la transparence, la flexibilité et l'accessibilité. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section__container feature__container" id="services">
+        <h2 class="section__header">Nos Services</h2>
+        <div class="service-images">
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Service Image 1">
+            </div>
+            <div class="service-image">
+                <img src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Service Image 2">
+            </div>
+        </div>
+
+        <div class="feature__cards">
+            <div class="feature__card">
+                <div class="feature__icon">
+                    <!-- Icône ou élément similaire -->
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h4>Espaces Flexibles</h4>
+                    <p>Des salles adaptées à vos besoins professionnels.</p>
+                </div>
+            </div>
+
+            <div class="feature__card">
+                <div class="feature__icon">
+                    <!-- Icône ou élément similaire -->
+                    <i class="fa fa-laptop" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h4>Equipement de Haute Qualité</h4>
+                    <p>Des installations modernes pour des réunions réussies.</p>
+                </div>
+            </div>
+
+            <div class="feature__card">
+                <div class="feature__icon">
+                    <!-- Icône ou élément similaire -->
+                    <i class="fa fa-calendar-check" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h4>Réservation Instantanée</h4>
+                    <p>Réservez votre salle en un clin d'œil.</p>
+                </div>
+            </div>
+        </div>
+        
+
+      
+    </section>
+
+
+    <section id="reservation" class="section__container reservation__container">
+        <h2 class="section__header">Réservez Votre Salle</h2>
+        <p class="section__description">Sélectionnez la salle de réunion de votre choix et réservez-la rapidement.</p>
+
+        <div class="reservation__content">
+            <!-- Image à gauche -->
+            <div class="reservation__image">
+                <img src="https://images.unsplash.com/photo-1573165759995-5865a394a1aa?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Salle de réunion" />
+            </div>
+
+            <!-- Texte à droite -->
+            <div class="reservation__form-container">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <!-- Si l'utilisateur est connecté, afficher le formulaire de réservation -->
+                    <div class="reservation__form">
+                        <form action="/reservation/submit" method="post">
+                            <div class="input__group">
+                                <input type="text" placeholder="Nom de la salle" name="roomName" required />
+                            </div>
+                            <div class="input__group">
+                                <input type="text" placeholder="Emplacement" name="location" required />
+                            </div>
+                            <div class="input__group">
+                                <input type="datetime-local" placeholder="Date et Heure" name="reservationDate" required />
+                            </div>
+                            <div class="input__group">
+                                <button type="submit" class="btn">Réserver maintenant</button>
+                            </div>
+                        </form>
+                    </div>
+                }
+                else
+                {
+                    <!-- Si l'utilisateur n'est pas connecté, afficher un message pour se connecter -->
+                    <div class="login-prompt">
+                        <p>Pour réserver une salle, vous devez être connecté. <a href="/Account/Login" class="login-link">Connectez-vous ici <span class="arrow">&#8594;</span></a></p>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer__container">
+            <!-- Colonne de logo et description -->
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="#" class="logo">Meet<span>Nest</span></a>
+                </div>
+                <p class="footer__description">
+                    Nous offrons les meilleures solutions pour vos besoins de réunion.
+                </p>
+            </div>
+
+            <!-- Colonne de contact -->
+            <div class="footer__col">
+                <h4>Contactez-nous</h4>
+                <ul class="footer__contact-list">
+                    <li><a href="mailto:contact@meetnest.com">contact@meetnest.com</a></li>
+                    <li><a href="tel:+1234567890">+123 456 7890</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section de copyright -->
+        <div class="footer__bottom">
+            <p>&copy; 2024 MeetNest. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>
