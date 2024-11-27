@@ -28,6 +28,8 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#reservation">Réservation</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="@Url.Action("Login", "Account")" target="_blank">Connectez-vous ici</a></li>
+
         </ul>
     </nav>
 
@@ -159,14 +161,14 @@
         <div class="reservation__content">
             <!-- Image à gauche -->
             <div class="reservation__image">
-                <img src="https://images.unsplash.com/photo-1573165759995-5865a394a1aa?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Salle de réunion" />
+                <img src="https://images.unsplash.com/photo-1573165759995-5865a394a1aa?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                     alt="Salle de réunion" />
             </div>
 
             <!-- Texte à droite -->
             <div class="reservation__form-container">
                 @if (User.Identity.IsAuthenticated)
                 {
-                    <!-- Si l'utilisateur est connecté, afficher le formulaire de réservation -->
                     <div class="reservation__form">
                         <form action="/reservation/submit" method="post">
                             <div class="input__group">
@@ -186,43 +188,40 @@
                 }
                 else
                 {
-                    <!-- Si l'utilisateur n'est pas connecté, afficher un message pour se connecter -->
                     <div class="login-prompt">
-                        <p>Pour réserver une salle, vous devez être connecté. <a href="/Account/Login" class="login-link">Connectez-vous ici <span class="arrow">&#8594;</span></a></p>
+                        <p>
+                            Pour réserver une salle, vous devez être connecté.
+                            <a href="@Url.Action("Login", "Account")" target="_blank">Connectez-vous ici</a>
+                        </p>
                     </div>
                 }
             </div>
         </div>
     </section>
 
-
-    <footer class="footer">
-        <div class="footer__container">
-            <!-- Colonne de logo et description -->
-            <div class="footer__col">
-                <div class="footer__logo">
-                    <a href="#" class="logo">Meet<span>Nest</span></a>
-                </div>
-                <p class="footer__description">
-                    Nous offrons les meilleures solutions pour vos besoins de réunion.
-                </p>
-            </div>
-
-            <!-- Colonne de contact -->
-            <div class="footer__col">
-                <h4>Contactez-nous</h4>
-                <ul class="footer__contact-list">
-                    <li><a href="mailto:contact@meetnest.com">contact@meetnest.com</a></li>
-                    <li><a href="tel:+1234567890">+123 456 7890</a></li>
-                </ul>
-            </div>
+    <section id="contact" class="section__container contact__container">
+        <h2 class="section__header">Contactez-nous</h2>
+        <div class="contact__content">
+            <ul class="contact__list">
+                <li>
+                    <a href="mailto:contact@meetnest.com">
+                        <i class="fas fa-envelope"></i> contact@meetnest.com
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:+1234567890">
+                        <i class="fas fa-phone-alt"></i> +123 456 7890
+                    </a>
+                </li>
+            </ul>
         </div>
-
-        <!-- Section de copyright -->
         <div class="footer__bottom">
             <p>&copy; 2024 MeetNest. Tous droits réservés.</p>
         </div>
-    </footer>
+    </section>
+
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

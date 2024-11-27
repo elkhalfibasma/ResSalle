@@ -4,13 +4,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Reservation.Data;
 using ResSalle;
 
 #nullable disable
 
 namespace ResSalle.Migrations
 {
-    [DbContext(typeof(ResSalleDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20241108142416_initialiseDb")]
     partial class initialiseDb
     {

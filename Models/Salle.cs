@@ -1,16 +1,17 @@
 ﻿namespace Reservation.Models
 {
-    public class Equipements
+    public class Salle
     {
-        public Equipements()
+        public Salle()
         {
             Reservations = new List<Reservations>();
         }
 
         public int Id { get; set; }
-        public string? Nom { get; set; }
+        public string Nom { get; set; }
+        public int Capacite { get; set; }
 
-        // Relation Many-to-Many avec Reservations
+        // Relation avec Reservations
         public List<Reservations> Reservations { get; set; }
     }
 }

@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ResSalle;
-using ResSalle.Models;
+using Reservation.Data;
+using Reservation.Models;
 
 namespace ResSalle.Controllers
 {
     public class EquipementsController : Controller
     {
-        private readonly ResSalleDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public EquipementsController(ResSalleDbContext context)
+        public EquipementsController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -44,12 +44,26 @@ namespace ResSalle.Controllers
         }
 
         // GET: Equipements/Create
-       
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         // POST: Equipements/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-      
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Nom")] Equipements equipements)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(equipements);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(equipements);
+        }
 
         // GET: Equipements/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -72,7 +86,7 @@ namespace ResSalle.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,nom")] Equipements equipements)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nom")] Equipements equipements)
         {
             if (id != equipements.Id)
             {

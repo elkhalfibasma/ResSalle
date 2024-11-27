@@ -12,6 +12,7 @@
 }
 
 * {
+* 
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -19,7 +20,7 @@
 
 .section__container {
     max-width: var(--max-width);
-    margin: auto;
+   
     padding: 5rem 1rem;
 }
 
@@ -28,6 +29,8 @@
     font-size: 2.5rem;
     font-weight: 600;
     columns: var(--text-dark);
+    text-align: center;
+    margin-bottom: -10px;
     text-align: center;
 }
 
@@ -311,44 +314,118 @@ nav {
 /* Styles pour chaque carte */
 .feature__card {
     display: flex;
-    flex-direction: column; /* Les icônes et les textes seront disposés en colonne */
+    flex-direction: column; 
     align-items: center;
-    width: 30%; /* Chaque carte prendra 30% de la largeur de son parent (vous pouvez ajuster selon le design) */
-    background-color: #ffffff; /* Couleur de fond pour chaque carte */
-    margin-top:20px;
+    width: 30%; 
 
     
     text-align: center;
 }
-/* Section de la réservation */
 #reservation {
-    
-    text-align: center;
+    text-align: center; 
     background-color: #ffffff;
     border-radius: 8px;
-   
+    padding: 20px; 
     transition: all 0.3s ease;
+    align-items: center; 
+    justify-content: space-between; 
+    margin-top: -30px; 
 }
 
     #reservation .section__header {
         font-size: 2rem;
-        margin-bottom: 10px;
+        margin-bottom: 10px; 
         font-weight: 700;
         color: #000;
-        transition: color 0.3s ease;
-
+        text-align: center;
     }
 
     #reservation .section__description {
         font-size: 1rem;
+        margin: 10px auto; 
         color: #000;
-        margin-bottom: 30px;
-        transition: color 0.3s ease;
-        text-align: left;
-        margin-top:160px;
+        text-align: right; 
     }
 
-/* Formulaire de réservation */
+.reservation__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.reservation__content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.reservation__image img {
+    width: 900%;
+    max-width: 350px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-left: 750px;
+    
+}
+
+.contact__container {
+    background-color: #eaf4fc;
+    border-radius: 10px;
+    padding: 20px; /* Réduit l'espace intérieur */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 0px; /* Réduit l'espace au-dessus */
+    width: 70%; /* Réduit la largeur du conteneur */
+    max-width: 300px; /* Définit une largeur maximale */
+   
+}
+
+
+
+.contact__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+.contact__content {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+    .contact__list li {
+        margin: 10px 0;
+    }
+
+    .contact__list a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.1rem;
+    }
+
+        .contact__list a:hover {
+            color: #007BFF;
+        }
+
+
+@media (max-width: 768px) {
+    .reservation__content {
+        flex-direction: column;
+    }
+
+    .reservation__image img {
+        max-width: 100%;
+       
+    }
+}
+
 .reservation__form {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 8px;
@@ -358,15 +435,15 @@ nav {
 }
 .service-images {
     display: flex;
-    gap: 10px; /* Espace entre les images */
+    gap: 10px; 
 }
 
 .service-image img {
-    width: 500px; /* Taille réduite des images */
-    height: 250px; /* Garder une hauteur proportionnelle */
-    object-fit: cover; /* Pour que les images ne se déforment pas */
+    width: 500px; 
+    height: 250px; 
+    object-fit: cover; 
     border-radius: 8px;
-    margin-left: 50px;/* Arrondir légèrement les bords des images */
+    margin-left: 70px;
 }
 .input__group {
     margin-bottom: 15px;
@@ -387,7 +464,7 @@ nav {
             outline: none;
         }
 
-/* Bouton Réserver */
+
 .btn {
     background-color: #0376c1;
     color: white;
@@ -402,20 +479,10 @@ nav {
     .btn:hover {
         background-color: #005aa7;
     }
-.reservation__image {
-    width: 35%; /* Taille de l'image réduite */
-    float: right; /* Positionner l'image à gauche */
-    margin-right: 30px; /* Espacement entre l'image et le contenu à droite */
-    overflow: hidden; /* Pour éviter tout débordement */
-    margin-top:-70px;
-}
 
-    .reservation__image img {
-        width: 100%; /* L'image s'adapte à la largeur de son conteneur */
-        height: auto; /* Garde les proportions de l'image */
-        object-fit: cover; /* Assure que l'image est bien recadrée et couvre toute la surface */
-    }
-/* Message de connexion */
+
+
+
 .login-prompt {
     font-size: 1rem;
     color: #12110f;
@@ -445,14 +512,17 @@ nav {
 }
 
 .feature__icon {
-    font-size: 2.5rem; /* Taille de l'icône */
-    margin-bottom: 15px; /* Espacement sous l'icône */
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    margin-top: 35px;
+    margin-left: 30px;
 }
 
 .feature__card h4 {
     font-size: 1.2rem;
     margin: 0;
     font-weight: bold;
+    margin-left: 30px;
 }
 
 .feature__card p {
@@ -673,78 +743,7 @@ nav {
         color: var(--text-dark);
     }
 
-.footer__container {
-    display: grid;
-    gap: 4rem 2rem;
-}
 
-.footer__col p {
-    margin-block: 1rem;
-    font-family: var(--header-font);
-    color: var(--text-light);
-    line-height: 1.5rem;
-}
-
-.footer__col h4 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.footer__socials {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-    .footer__socials a {
-        font-size: 1.25rem;
-        color: var(--text-light);
-    }
-
-        .footer__socials a:hover {
-            color: var(--primary-color);
-        }
-
-.footer__links {
-    display: grid;
-    gap: 1rem;
-}
-
-    .footer__links a {
-        font-family: var(--header-font);
-        color: var(--text-light);
-    }
-
-        .footer__links a:hover {
-            color: var(--primary-color);
-        }
-
-.footer__bar {
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: var(--text-light);
-    text-align: center;
-}
-
-@media (width > 540px) {
-    .feature__container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .destination__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .package__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footer__container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 @media (width > 768px) {
     nav {

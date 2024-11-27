@@ -1,31 +1,28 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ResSalle.Models;
+using Reservation.Models;
 
-namespace ResSalle.Configuration
+namespace Reservation.Configuration
 {
     public class EquipementsConfiguration : IEntityTypeConfiguration<Equipements>
     {
         public void Configure(EntityTypeBuilder<Equipements> builder)
         {
-            builder
-                 .HasKey(a => a.Id);
-            builder
-                .Property(a => a.Id)
+            builder.HasKey(e => e.Id);
+
+            builder.Property(e => e.Id)
                 .UseIdentityColumn();
-            builder
-                .Property(c => c.nom)
-                .IsRequired();
-            builder
-               .ToTable("Equipements");
 
+            builder.Property(e => e.Nom)
+                .IsRequired()
+                .HasMaxLength(100);
 
+            // Many-to-Many relation with Reservations
+            builder.HasMany(e => e.Reservations)
+                .WithMany(r => r.Equipements)
+                .UsingEntity(j => j.ToTable("ReservationEquipements"));
 
-
-
-
-
-
+            builder.ToTable("Equipements");
         }
     }
 }

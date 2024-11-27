@@ -1,30 +1,42 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using ResSalle;
+using Reservation.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<ResSalleDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-// Add services to the container.
+
+// Ajouter les services à l'application
 builder.Services.AddControllersWithViews();
+
+// Configuration de la connexion à la base de données
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Configurer l'authentification par cookies
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";  // Page de connexion en cas d'utilisateur non authentifié
+        options.AccessDeniedPath = "/Home/AccessDenied";  // Page d'accès refusé si l'utilisateur n'est pas autorisé
+    });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurer le pipeline HTTP
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
+app.UseAuthentication();  // Ajouter la gestion de l'authentification
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Equipements}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

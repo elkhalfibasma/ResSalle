@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Reservation.Data;
 
@@ -10,9 +11,11 @@ using Reservation.Data;
 namespace ResSalle.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ResSalleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241126084359_mig")]
+    partial class mig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
